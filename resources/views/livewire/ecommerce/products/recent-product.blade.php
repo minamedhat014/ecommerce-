@@ -6,18 +6,19 @@
 <div class="container text-center mt-4">
     
 
-    <div class="row justify-content-evenly">
+   
         
-        @foreach($products as $key => $product)
-
-        <div class="product-card col-lg-3 col-md-4 col-sm-5">
-            @livewire('ecommerce.products.product-card', ['product' => $product], key($product->id))
-            @livewire('ecommerce.products.product-modal')
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-2 justify-content-center">
+            @foreach($products as $key => $product)
+                <div class="col">
+                    @livewire('ecommerce.products.product-card', ['product' => $product], key($product->id))
+                    @livewire('ecommerce.products.product-modal', ['product' => $product])
+                </div>
+            @endforeach
         </div>
-                      
-        @endforeach 
+        
     
-</div>
+
     </div>
    
 </div>

@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Traits\HasTable;
 use App\Traits\HasStatus;
 use App\Models\ProductCategory;
+use App\Traits\HasPhotoUpload;
 use Livewire\Attributes\Computed;
 
 class Categories extends Component
@@ -15,6 +16,7 @@ class Categories extends Component
 use HasCrud;
 use HasTable;
 use HasStatus;
+use HasPhotoUpload;
 
 
 
@@ -42,6 +44,7 @@ protected $write_permission='write category';
                             'name_ar' => 'required|regex:/^[\p{Arabic}a-zA-Z0-9\s\-]+$/u',
                             'name_en' => 'required|regex:/^[\a-zA-Z0-9\s\-]+$/u',
                             'description' => 'nullable|regex:/^[\p{Arabic}a-zA-Z0-9\s\-]+$/u',
+                            'photo' => 'required|image|mimes:jpeg,png|max:1024', // 1MB Max
                         ];
     }
 
@@ -49,7 +52,7 @@ protected $write_permission='write category';
 
  public function store(){
  $validatedData= $this->validate();
- $this->storeRecord($this->model,$validatedData);
+ $this->storeRecord($this->model,$validatedData,'categories');
  }
 
 
@@ -73,7 +76,7 @@ $this->description = $edit->description;
  public function update(){
     $validatedData= $this->validate();
     $record =$this->model::FindOrFail($this->edit_id);
-   $this->updateRecord($record,$validatedData);
+   $this->updateRecord($record,$validatedData,'categories');
     }
 
   

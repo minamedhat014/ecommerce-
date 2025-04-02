@@ -19,11 +19,14 @@ trait HasFileUpload {
  
     public function updatedfile()
     {
-
+        try{
         if (Storage::exists('app/files/' . $this->file->hashName())) {
             $this->addError('file', 'A file with this name already exists.');
             $this->file = null;
         }
+    }catch(\Exception $e){
+        errorMessage($e);
+     } 
     }
 
 public function removeFile()

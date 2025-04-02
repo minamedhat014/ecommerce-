@@ -6,6 +6,8 @@ return [
     'name'=>'name',
     'description' => 'Description',
     'category'=>'Category',
+    'categories'=>'categories',
+    'view_all_categories'=>'View All Categories',
     'price'=>'Price',
     'quantity'=>'Quantity',
     'image'=>'Image',

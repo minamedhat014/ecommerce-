@@ -5,7 +5,11 @@
    <x-form-input type="text" fname="Arabic name" bname="name_ar" icon="fa-solid fa-file" class="req" />
    <x-form-input type="text" fname="English name" bname="name_en" icon="fa-solid fa-file" class="req" />
    <x-form-input type="text" fname="Description" bname="description" icon="fa-solid fa-pen"/>
-  
+   <x-form-photo fname="Category image"  bname="photo">
+    <x-slot name="preview">
+      <x-photo-preview :previews="$uploadedPreview" removeAction="removePhoto" />
+  </x-slot>
+  </x-form-photo>
    </x-slot>
 </x-app-modal>
  
@@ -16,6 +20,11 @@
     <x-form-input type="text" fname="Arabic name" bname="name_ar" icon="fa-solid fa-file" class="req" />
     <x-form-input type="text" fname="English name" bname="name_en" icon="fa-solid fa-file" class="req" />
     <x-form-input type="text" fname="Description" bname="description" icon="fa-solid fa-pen"/> 
+    <x-form-photo fname="Category image"  bname="photo">
+      <x-slot name="preview">
+        <x-photo-preview :previews="$uploadedPreview" removeAction="removePhoto" />
+    </x-slot>
+    </x-form-photo>
   </x-slot>
 </x-app-modal>
 <!--  delete Modal -->

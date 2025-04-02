@@ -13,7 +13,7 @@
     <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
       @foreach ($features as $feature)
         <div class="col">
-          <div class="card tiny-banner mb-3 border-1">
+          <div class="card-tiny tiny-banner mb-3 border-1">
             <div class="row">
               <div class="col-auto">
                <img src="{{$feature['icon']}}" alt="" class="tiny-image" loading="lazy">

@@ -11,6 +11,7 @@
         <th> Arabic name</th>
         <th> English name </th>
         <th> Slug</th>
+        <th> image</th>
         <th>Descripation</th>
         <th > Actions</th>   
       </x-slot>
@@ -22,6 +23,10 @@
                               <td>{{$row->name_ar}} </td>
                               <td>{{$row->name_en}} </td>
                               <td>{{$row->slug}} </td>
+                              <td>
+                                <img src="{{$row->getFirstMediaUrl('categories','thumb')}}" alt="{{ $row->name}}" class="noti-image">
+                              </td>
+
                               <td>{{$row->description}} </td>
                              <td>  
                               <div>

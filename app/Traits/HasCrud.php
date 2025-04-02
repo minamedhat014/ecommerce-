@@ -23,7 +23,7 @@ trait HasCrud {
 
     private function handleMedia($record, $validatedData, $mediaCollection)
     {
-        // Always clear the previous media first
+        try{
           $record->clearMediaCollection($mediaCollection);
         if (isset($validatedData['photo'])) {
             // Single photo upload
@@ -34,10 +34,14 @@ trait HasCrud {
                 $record->addMedia($photo)->toMediaCollection($mediaCollection);
             }
         }
+    }catch(\Exception $e){
+        errorMessage($e);
+     } 
     }
 
     private function handleRelationships($record, $relationships)
     {
+    
         foreach ($relationships as $relation => $data) {
             if (method_exists($record, $relation)) {
                 $relationInstance = $record->$relation();
