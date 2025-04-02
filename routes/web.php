@@ -29,6 +29,7 @@ Route::group(
 
     Route::get('/lang/{locale}', [languageController::class, 'switchLang'])->name('switchLang');
     Route::get('/products/{slug}',[PageLinkController::class,'showProduct'])->name('showProduct');
+    Route::get('/categories/{slug}',[PageLinkController::class,'showCategory'])->name('category.show');
 
   
 

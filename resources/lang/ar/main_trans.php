@@ -5,6 +5,8 @@ return [
     'name'=>'الأسم',
     'description' => 'الوصف',
     'category'=>'الصنف',
+    'categories'=>'الاصناف',
+    'view_all_categories'=>'عرض كل الاصناف',
     'price' => 'السعر',
     'quantity' => 'الكميه',
     'image' => 'الصوره',

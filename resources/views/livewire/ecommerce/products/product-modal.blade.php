@@ -6,11 +6,6 @@
       <div class="modal-content"> 
         <div class="modal-body">
             <button type="button" class="offcanvas-close-btn" data-bs-dismiss="modal" aria-label="Close"> <i class="fa fa-close"></i></button>
-
-            <div wire:loading >
-                <i class="fa-solid fa-spinner fa-spin loader"></i>
-            </div>
-
 @if($product)
             <div class="row col-12">
               <!-- الصورة الرئيسية -->

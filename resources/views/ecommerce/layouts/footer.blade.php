@@ -1,5 +1,5 @@
 <footer class="py-5">
-    <div class="container-fluid">
+    <div>
       <hr>
     <!-- Fixed bottom bar -->
    @livewire('layouts.fixed-bar')

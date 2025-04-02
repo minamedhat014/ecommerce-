@@ -15,7 +15,6 @@ use App\Exports\ProductDetailsExport;
 use App\Models\ProductAplication;
 use App\Models\ProductCategory;
 use App\Models\ProductFeature;
-use App\Models\supplier;
 use App\Traits\HasStatus;
 
 class Products extends Component
@@ -42,7 +41,6 @@ class Products extends Component
     public $slug;
     public $sku;        
     public $category_id; 
-
     public $description_en;
     public $description_ar;
     public $status; 

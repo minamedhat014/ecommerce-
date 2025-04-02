@@ -5,6 +5,7 @@ use App\Models\PageLink;
 
 use App\Models\BannerImage;
 use App\Models\ecommerceInfo;
+use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 
@@ -54,6 +55,14 @@ if (!function_exists('frontLinks')) {
               ->whereNull('parent_id')
               ->whereRelation('type', 'name', $name)
               ->get();
+      });
+  }
+}
+
+if (!function_exists('productCategories')) {
+  function productCategories() {
+      return Cache::remember("product_categories", 3600, function ()  {
+          return ProductCategory::all();
       });
   }
 }

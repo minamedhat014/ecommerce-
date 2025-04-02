@@ -10,6 +10,9 @@
     <script src="{{asset('assets/front end/js/plugins.js')}}"></script>
     <script src="{{asset('assets/front end/js/script.js')}}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 
 <script>
  // contraol page direction 
